@@ -107,7 +107,6 @@ class AutorController {
     }
     
   };
-
 }
 
 export default AutorController;
