@@ -90,11 +90,11 @@ class AutorController {
   static listarAutoresPorFiltro = async (req, res, next) => {
     try{
       const nome = req.query.nome;
-
+    
       const busca = {}
-
+      const regex = RegExp(nome, "i");
       if(nome){
-        busca.nome = {$regex: nome, $options: "i"};
+        busca.nome = regex;
       }
 
       const listarAutoresPorNomeResult = await autores.find(busca); 
