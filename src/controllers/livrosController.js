@@ -100,14 +100,14 @@ class LivroController {
     }
   };
 
-  static listarLivroPorFiltro = async (req, res, next) =>{
+  static listarLivroPorFiltros = async (req, res, next) =>{
     try{
       const { editora, titulo }  = req.query;
 
       const busca = {};
 
       if (editora){
-        busca.editora = editora;
+        busca.editora = {$regex: editora, $options: "i"};
       }
 
       if (titulo) {
