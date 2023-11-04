@@ -6,4 +6,4 @@ class RequisicaoIncorreta extends ErroBase {
     }
 }
 
-export default RequisicaoIncorreta
+export default RequisicaoIncorreta;
