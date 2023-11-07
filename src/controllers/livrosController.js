@@ -3,7 +3,7 @@ import { autores, livros } from "../models/index.js";
 
 class LivroController {
  
-  static listarLivros = async (req, res, next) => {
+  static listarLivro = async (req, res, next) => {
   
     try{
         const buscaLivros = livros.find();

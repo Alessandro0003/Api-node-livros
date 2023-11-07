@@ -1,14 +1,21 @@
-version: '3'
+version: '5'
 
 services:
-  app:
-    container_name: api-node
-    build: 
-       context:
-       dockerfile: Dockerfile
-    volumes:
-      - ./:/usr/src/app
-    environment:
-      - PORT=3000
+  api:
+    image: node:fermium-alpine
+    command: npm run start
+    depends_on:
+      - mongodb
     ports:
       - 3000:3000
+    restart: "on-failure"
+    volumes:
+      - ./:/app
+    working_dir: /app
+
+  mongodb:
+    image: mongo:latest
+    ports:
+        - 27017:27017
+  
+ 
