@@ -26,6 +26,9 @@ jobs:
       
       - run: docker-compose up -d mongodb
         name: Start infrastructure
+      
+      - run: docker-compose up -d api
+        name: Start infrastructure
 
       - run: docker-compose down
         name: Dispose infrastructure
