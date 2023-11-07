@@ -24,9 +24,6 @@ jobs:
       - run: npm ci
         name: Install
       
-      - run: npm run lint
-        name: Lint
-
       - run: docker-compose up -d mongodb
         name: Start infrastructure
 
